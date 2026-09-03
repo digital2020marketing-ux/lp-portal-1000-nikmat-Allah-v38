@@ -15,14 +15,16 @@
     <link rel="dns-prefetch" href="https://smartbook.id" />
     <link rel="dns-prefetch" href="https://connect.facebook.net" />
 
-    <!-- Preload Critical LCP Hero Image for Instant Mobile Display -->
-    <link rel="preload" as="image" href="https://smartbook.id/k_image_1000_nkmt/1menudashbord1000nikmatallah.png" fetchpriority="high" />
+    <!-- Preload Critical LCP Hero Image (Local WebP for Instant Mobile Paint) -->
+    <link rel="preload" as="image" href="/images/1menudashbord1000nikmatallah.webp" type="image/webp" fetchpriority="high" />
 
-    <!-- Non-Blocking Google Fonts with Instant Fallback -->
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600;1,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600;1,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" media="print" onload="this.media='all'" />
+    <!-- Non-Blocking Google Fonts with display=swap and System Fallbacks -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Playfair+Display:ital,wght@0,700;1,700&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Playfair+Display:ital,wght@0,700;1,700&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" media="print" onload="this.media='all'" />
     <noscript>
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600;1,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" />
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Playfair+Display:ital,wght@0,700;1,700&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" />
     </noscript>
     
     <!-- Global Cross-Origin Error Guard -->
@@ -41,7 +43,7 @@
       };
     </script>
 
-    <!-- Meta Pixel Code (Non-blocking & Performance-optimized) -->
+    <!-- Meta Pixel Code (Idle & Interaction Deferred for 0ms Total Blocking Time) -->
     <script>
       !function(f,b,e,v,n,t,s)
       {
@@ -58,36 +60,40 @@
           isCrossIframe = true;
         }
 
-        // Defer injection slightly so main thread renders page first
+        try {
+          fbq('init', '2084546082456758');
+          fbq('track', 'PageView');
+        } catch (e) {}
+
+        var pixelLoaded = false;
         var loadPixel = function() {
-          if (!isCrossIframe) {
-            t=b.createElement(e);t.async=!0;
-            t.src=v;
-            t.onerror=function(){
-              console.warn("Meta Pixel script blocked or unavailable.");
-            };
-            s=b.getElementsByTagName(e)[0];
-            if(s && s.parentNode) {
-              s.parentNode.insertBefore(t,s);
-            } else {
-              b.head.appendChild(t);
-            }
+          if (pixelLoaded || isCrossIframe) return;
+          pixelLoaded = true;
+          t=b.createElement(e);t.async=!0;
+          t.src=v;
+          t.onerror=function(){
+            console.warn("Meta Pixel script blocked or unavailable.");
+          };
+          s=b.getElementsByTagName(e)[0];
+          if(s && s.parentNode) {
+            s.parentNode.insertBefore(t,s);
+          } else {
+            b.head.appendChild(t);
           }
         };
 
-        if (document.readyState === 'complete') {
-          loadPixel();
+        if ('requestIdleCallback' in window) {
+          requestIdleCallback(function() {
+            setTimeout(loadPixel, 1800);
+          });
         } else {
-          window.addEventListener('load', loadPixel);
+          setTimeout(loadPixel, 2200);
         }
+
+        ['scroll', 'touchstart', 'click'].forEach(function(evt) {
+          window.addEventListener(evt, loadPixel, { once: true, passive: true });
+        });
       }(window, document,'script', 'https://connect.facebook.net/en_US/fbevents.js');
-      
-      try {
-        fbq('init', '2084546082456758');
-        fbq('track', 'PageView');
-      } catch (e) {
-        // Safe fallback
-      }
     </script>
     <!-- End Meta Pixel Code -->
   </head>
@@ -99,7 +105,40 @@
         alt=""
       />
     </noscript>
-    <div id="root"></div>
+    <div id="root">
+      <div style="background-color: #FAF7F2; min-height: 100vh; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: #1A1816;">
+        <div style="background: linear-gradient(to right, #0E2A1D, #163E2B, #0E2A1D); color: #fff; padding: 7px 12px; text-align: center; font-size: 11px; font-weight: 500; border-bottom: 1px solid rgba(212,175,55,0.4);">
+          <span>✨ Akses Digital Terpadu Portal 1000 Nikmat Allah — Team SmartBook.ID</span>
+        </div>
+        <header style="background: rgba(255,255,255,0.95); border-bottom: 1px solid rgba(212,175,55,0.3); padding: 10px 16px; display: flex; align-items: center; justify-content: space-between; max-width: 896px; margin: 0 auto;">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <img src="/images/smartbook-logo.webp" alt="SmartBook.ID" width="36" height="36" style="width: 36px; height: 36px; border-radius: 8px; border: 1px solid #D4AF37; object-fit: contain;" />
+            <div>
+              <div style="font-weight: 800; font-size: 14px; color: #0E2A1D;">SmartBook.ID</div>
+              <div style="font-size: 10px; color: #6E6A63;">Sahabat Muhasabah &amp; Literasi Islam</div>
+            </div>
+          </div>
+          <a href="#order-form" style="background: #0E2A1D; color: #D4AF37; font-size: 11px; font-weight: 700; padding: 7px 14px; border-radius: 9999px; text-decoration: none; border: 1px solid #D4AF37;">Beli Sekarang Rp89.000</a>
+        </header>
+        <section style="max-width: 500px; margin: 0 auto; padding: 24px 16px 16px; text-align: center;">
+          <div style="display: inline-block; background: #0E2A1D; color: #D4AF37; font-size: 10px; font-weight: 700; padding: 4px 12px; border-radius: 9999px; letter-spacing: 0.08em; margin-bottom: 12px;">
+            PORTAL 1000 NIKMAT ALLAH
+          </div>
+          <h1 style="font-size: 26px; line-height: 1.25; font-weight: 800; color: #0E2A1D; margin-bottom: 12px; font-family: Georgia, serif;">
+            Jangan Tunggu Kehilangan...<br />
+            <span style="font-size: 19px; font-weight: 700; color: #8F1D1D;">Baru Menyadari Betapa Banyak Nikmat yang Sudah Allah Berikan</span>
+          </h1>
+          <p style="font-size: 13px; color: #4A463F; line-height: 1.5; margin-bottom: 16px;">
+            Luangkan hanya <strong>5–10 menit sehari</strong> untuk membaca, mendengarkan, merenungkan, dan mencatat nikmat Allah melalui satu portal digital terpadu.
+          </p>
+          <div style="background: linear-gradient(to bottom, #1C2820, #0E2A1D); border: 2px solid #D4AF37; border-radius: 28px; padding: 10px; max-width: 320px; margin: 0 auto; box-shadow: 0 16px 36px rgba(14,42,29,0.25);">
+            <div style="background: #ffffff; border-radius: 18px; overflow: hidden; border: 1px solid rgba(212,175,55,0.4); aspect-ratio: 491/644;">
+              <img src="/images/1menudashbord1000nikmatallah.webp" alt="Tampilan Utuh Portal 1000 Nikmat Allah di HP" width="491" height="644" style="width: 100%; height: auto; display: block;" fetchpriority="high" decoding="async" />
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

@@ -59,7 +59,7 @@ export const HeroSection: React.FC = () => {
             </div>
 
             {/* Screen Inner Container - Menampilkan seluruh gambar secara utuh */}
-            <div className="rounded-[20px] overflow-hidden bg-white border border-[#D4AF37]/40 shadow-inner min-h-[360px] flex items-center justify-center">
+            <div className="rounded-[20px] overflow-hidden bg-white border border-[#D4AF37]/40 shadow-inner flex items-center justify-center">
               <img
                 src={DASHBOARD_MOBILE_IMAGE_URL}
                 alt="Tampilan Utuh Portal 1000 Nikmat Allah di HP"
@@ -68,8 +68,9 @@ export const HeroSection: React.FC = () => {
                 loading="eager"
                 decoding="async"
                 fetchPriority="high"
-                width={320}
-                height={640}
+                width={491}
+                height={644}
+                style={{ aspectRatio: "491/644" }}
               />
             </div>
 

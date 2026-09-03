@@ -16,16 +16,16 @@ export const WHATSAPP_ACCESS_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${enco
 export const WHATSAPP_HELP_URL = WHATSAPP_ACCESS_URL;
 export const WHATSAPP_SUPPORT_URL = WHATSAPP_ACCESS_URL;
 
-export const SMARTBOOK_LOGO_URL = "https://i.ibb.co.com/7xR4c70n/Chat-GPT-Image-Jan-9-2026-07-13-06-AM.png";
+export const SMARTBOOK_LOGO_URL = "/images/smartbook-logo.webp";
 
-// Portal Menu Screenshots
-export const DASHBOARD_MOBILE_IMAGE_URL = "https://smartbook.id/k_image_1000_nkmt/1menudashbord1000nikmatallah.png";
-export const PODCAST_AUDIO_IMAGE_URL = "https://smartbook.id/k_image_1000_nkmt/2menupadcastaudio1000nikmatallah.png";
-export const MATERI_EBOOK_IMAGE_URL = "https://smartbook.id/k_image_1000_nkmt/3menumateriebook1000nikmatallah.png";
-export const SLIDE_PRESENTASI_IMAGE_URL = "https://smartbook.id/k_image_1000_nkmt/4menuslidepresentasi1000nikmatallah.png";
-export const WORKSHEET_DIGITAL_IMAGE_URL = "https://smartbook.id/k_image_1000_nkmt/5menuworksheetdigital1000nikmatallah.png";
-export const WORKSHEET_PRINTABLE_IMAGE_URL = "https://smartbook.id/k_image_1000_nkmt/6menuworksheetprintable(50bab)1000nikmatallah.png";
-export const TEMAN_MUHASABAH_AI_IMAGE_URL = "https://smartbook.id/k_image_1000_nkmt/7menutemanmuhasabah1000nikmatallah.png";
+// Portal Menu Screenshots - High Performance Local WebP Assets
+export const DASHBOARD_MOBILE_IMAGE_URL = "/images/1menudashbord1000nikmatallah.webp";
+export const PODCAST_AUDIO_IMAGE_URL = "/images/2menupadcastaudio1000nikmatallah.webp";
+export const MATERI_EBOOK_IMAGE_URL = "/images/3menumateriebook1000nikmatallah.webp";
+export const SLIDE_PRESENTASI_IMAGE_URL = "/images/4menuslidepresentasi1000nikmatallah.webp";
+export const WORKSHEET_DIGITAL_IMAGE_URL = "/images/5menuworksheetdigital1000nikmatallah.webp";
+export const WORKSHEET_PRINTABLE_IMAGE_URL = "/images/6menuworksheetprintable1000nikmatallah.webp";
+export const TEMAN_MUHASABAH_AI_IMAGE_URL = "/images/7menutemanmuhasabah1000nikmatallah.webp";
 
 export interface PortalMenuItem {
   id: string;

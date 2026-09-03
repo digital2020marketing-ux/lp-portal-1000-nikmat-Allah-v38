@@ -208,8 +208,8 @@ Berikan tanggapan dalam format JSON persis sesuai struktur berikut:
       express.static(distPath, {
         maxAge: "1d",
         setHeaders: (res, filePath) => {
-          // Long-term immutable caching for hashed assets (/assets/*)
-          if (filePath.includes("/assets/")) {
+          // Long-term immutable caching for hashed assets (/assets/*) and optimized webp images (/images/*)
+          if (filePath.includes("/assets/") || filePath.includes("/images/")) {
             res.setHeader("Cache-Control", "public, max-age=31536000, immutable");
           }
         },
