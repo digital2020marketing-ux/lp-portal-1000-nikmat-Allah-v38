@@ -1,0 +1,8 @@
+{
+  "name": "LP Portal interaktif Nikmat Allah v 3.8",
+  "description": "Landing page responsif dan portal interaktif Muhasabah 1000 Nikmat Allah - Peluklah Nikmatmu Sebelum Menjadi Kenangan",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

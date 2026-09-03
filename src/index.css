@@ -1,0 +1,127 @@
+@import "tailwindcss";
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #FAF7F2;
+    color: #1A1816;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  .font-serif {
+    font-family: 'Playfair Display', Georgia, Cambria, "Times New Roman", Times, serif;
+  }
+
+  .font-arabic {
+    font-family: 'Amiri', 'Traditional Arabic', 'Scheherazade', serif;
+  }
+
+  /* Prevent iOS Safari auto-zoom on input focus by setting minimum font-size to 16px on touch devices */
+  input[type="text"],
+  input[type="tel"],
+  input[type="email"],
+  textarea,
+  select {
+    font-size: 16px !important;
+  }
+
+  @media (min-width: 640px) {
+    input[type="text"],
+    input[type="tel"],
+    input[type="email"],
+    textarea,
+    select {
+      font-size: 0.875rem !important;
+    }
+  }
+
+  /* High performance touch responsiveness on mobile buttons & links */
+  button, a {
+    touch-action: manipulation;
+  }
+}
+
+/* Mobile Performance Engine: Skip off-screen rendering and layout calculation until scrolled into view */
+.cv-auto {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 450px;
+}
+
+/* Clean, Elegant Islamic Background Palettes & Parchment */
+.bg-islamic-pattern {
+  background-color: #FAF7F2;
+  background-image: linear-gradient(180deg, #FAF7F2 0%, #F5EFE6 50%, #FAF7F2 100%);
+}
+
+.bg-islamic-stars-dark {
+  background-color: #081B12;
+  background-image: 
+    radial-gradient(circle at 50% 0%, rgba(212, 175, 55, 0.12) 0%, transparent 65%),
+    linear-gradient(180deg, #0E2A1D 0%, #071810 100%);
+}
+
+.bg-islamic-stars-light {
+  background-color: #FAF7F2;
+  background-image: radial-gradient(circle at 50% 0%, rgba(212, 175, 55, 0.08) 0%, transparent 70%);
+}
+
+.bg-emerald-luxury {
+  background: linear-gradient(135deg, #071810 0%, #0E2A1D 50%, #153E2B 100%);
+}
+
+.bg-gold-metallic {
+  background: linear-gradient(135deg, #FBF2D5 0%, #E6C875 35%, #D4AF37 70%, #AA771C 100%);
+}
+
+.text-gold-gradient {
+  background: linear-gradient(135deg, #FFF0C2 0%, #E6C875 40%, #D4AF37 80%, #F3E5AB 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.border-gold-ornate {
+  border-image: linear-gradient(to right, rgba(212, 175, 55, 0.2), rgba(212, 175, 55, 0.8), rgba(212, 175, 55, 0.2)) 1;
+}
+
+.gold-glow {
+  box-shadow: 0 0 25px -3px rgba(212, 175, 55, 0.35);
+}
+
+.emerald-glow {
+  box-shadow: 0 12px 36px -8px rgba(14, 42, 29, 0.45);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.35s ease-out forwards;
+}
+
+@keyframes spinSlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-spin-slow {
+  animation: spinSlow 20s linear infinite;
+}
+
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.05); }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 4s ease-in-out infinite;
+}
+
